@@ -3,6 +3,9 @@ body {
 	font-size: 1em;
 	
 }
+div{
+	color: aliceblue;
+}
 
 h3 {
 	color: rgb(240, 240, 240);
@@ -14,7 +17,15 @@ p {
 	font-family: Charcoal, sans-serif;
 	font-size: 1em;
 }
-.flex-container {
+.button-container {
+	display: flex;
+	flex-flow: row wrap;
+	flex-wrap: wrap;
+	justify-content: center;
+	justify-content: space-around;
+	
+}
+.row-container {
 	display: flex;
 	flex-flow: row wrap;
 	flex-wrap: wrap;
@@ -107,13 +118,6 @@ a:active {
 }
 
 
-
-@font-face {
-	font-family: myFirstFont;
-	src: url(sansation_light.woff);
-}
-
-
 #search{
 	width: 100%;
 	height: 20%;
@@ -126,4 +130,12 @@ button{
   	text-align: center;
   	text-decoration: none;
 }
+
+.poster{
+	height:80%;
+	width:30%;
+
+
+}
+
 
