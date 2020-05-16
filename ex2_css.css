@@ -9,7 +9,7 @@ div{
 
 h3 {
 	color: rgb(240, 240, 240);
-	font-size: 2.5em;
+
 }
 
 
@@ -62,15 +62,10 @@ a:active {
     color: lightblue;
 }
 
-.item1 {
-	 grid-area: logo; 
-	
-
-
-}
-.item2 { grid-area: search_bar; }
-.item3 { grid-area: buttons; }
-.item4 { grid-area: images; }
+.logo { grid-area: logo;}
+.search_bar { grid-area: search_bar; }
+.button_holder { grid-area: buttons; }
+.images { grid-area: images; }
 
 
 
@@ -83,39 +78,29 @@ a:active {
 		grid-template-areas:
 			'logo search_bar search_bar buttons buttons'
 			'images images images images images';
-		grid-gap: 0.2em;
-		  
-		  
+		grid-gap: 0.2em;  
+	}
+	#Search_button{
+		visibility: hidden;
 	}
 }
 	
 	
-/* On screens that are 992px-600px or less, set the background color to lightgreen */
+/* On screens that are 992px or less, set the background color to lightgreen */
 @media screen and (max-width: 992px) {
 	
 	.grid-container {
 		display: grid;
   		grid-template-areas:
-			'header header header'
-			'menu main main'
-			'menu info info';
+		  'logo search_bar search_bar buttons buttons'
+		  'images images images images images';
 		
+	}
+	.search_bar {
+		visibility: collapse;
 	}
 }
   
-  /* On screens that are 600px or less, set the background color to red */
-  /* and change the display*/
-@media screen and (max-width: 600px) {
-	
-	.grid-container {
-		display: grid;
-  		grid-template-areas:
-			'header header header'
-			'menu menu menu'
-			'main main main '
-			'info info info';
-	}
-}
 
 
 #search{
@@ -130,6 +115,11 @@ button{
   	text-align: center;
   	text-decoration: none;
 }
+#Search_button{
+	width: 32px;
+	height: 32px;
+	box-shadow: 120px 80px 20px #0ff;
+}
 
 .poster{
 	height:80%;
@@ -137,5 +127,12 @@ button{
 
 
 }
+
+.content {
+	padding: 0 18px;
+	display: none;
+	overflow: hidden;
+	background-color: #f1f1f1;
+  }
 
 

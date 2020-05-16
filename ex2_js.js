@@ -2,11 +2,35 @@ window.onload = function(){
 	document.getElementById("Register").addEventListener("click", search);
 	
 	suggestions("suggestions","Batman Returns");
+	document.getElementById("Search_button").addEventListener("click", show_search_bar);
+	window.addEventListener("resize", search_bar_toggle);
 };
-
 
 var link='http://www.omdbapi.com/?apikey=ebcdb9f6';
 
+function search_bar_toggle(){
+	if(window.innerWidth< 992 ){
+		document.getElementById("Search_button").style.visibility = "visible";
+		var search_bar = document.querySelector(".search_bar");
+		search_bar.style.visibility="hidden";
+	}
+	else{
+		document.getElementById("Search_button").style.visibility = "hidden";
+		var search_bar = document.querySelector(".search_bar");
+		search_bar.style.visibility="visible";
+	}
+	
+}
+
+function show_search_bar(){
+	var search_bar = document.querySelector(".search_bar");
+	var button_holder = document.querySelector(".button_holder");
+	search_bar.style.visibility="visible";
+	button_holder.style.visibility="hidden";
+
+
+
+}
 
 function search(){
 	var request = new XMLHttpRequest();
